@@ -1,0 +1,1750 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/20/2021 10:43:22 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-240QH53"
+  DTS:CreatorName="DESKTOP-240QH53\noaef"
+  DTS:DTSID="{5CC80DF2-D9B1-4095-BB19-0BD9F98ED676}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="8192"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{9244C3DA-BD40-4DA9-BF74-62FCADCC9127}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-240QH53.PriorityERP]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{657190C2-2DD6-44D7-B7E3-E7615A70A739}"
+      DTS:ObjectName="DESKTOP-240QH53.PriorityERP">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-240QH53;Initial Catalog=PriorityERP;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{91A4AB08-B265-4030-B62F-9A31FEA3596A}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\noaef\OneDrive\Desktop\BI DEVELOPER COURSE\EXPERIS COURSE\Final Project\OLTP_SRC\agents.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 1]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{14715B62-2208-42B6-BF94-96431B83FDEE}"
+      DTS:ObjectName="Excel Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\noaef\OneDrive\Desktop\BI DEVELOPER COURSE\EXPERIS COURSE\Final Project\Book1.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 2]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{B100B21A-6C34-488A-A1FF-F75BFB2F7D04}"
+      DTS:ObjectName="Excel Connection Manager 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\noaef\OneDrive\Desktop\BI DEVELOPER COURSE\EXPERIS COURSE\Final Project\OLTP_SRC\braches.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Branches"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{72816480-7DBD-4844-AB18-444953808D5B}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Branches"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Branches\Branches"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Branches"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">braches$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Branches\Branches.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Branches\Branches.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Branches\Branches.Outputs[Excel Source Output].Columns[PHONE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Branches\Branches.Outputs[Excel Source Output].ExternalColumns[PHONE]"
+                      length="255"
+                      lineageId="Package\Branches\Branches.Outputs[Excel Source Output].Columns[PHONE]"
+                      name="PHONE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Branches\Branches.Outputs[Excel Source Output].Columns[ADDRESS]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Branches\Branches.Outputs[Excel Source Output].ExternalColumns[ADDRESS]"
+                      length="255"
+                      lineageId="Package\Branches\Branches.Outputs[Excel Source Output].Columns[ADDRESS]"
+                      name="ADDRESS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Branches\Branches.Outputs[Excel Source Output].Columns[STATE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Branches\Branches.Outputs[Excel Source Output].ExternalColumns[STATE]"
+                      length="255"
+                      lineageId="Package\Branches\Branches.Outputs[Excel Source Output].Columns[STATE]"
+                      name="STATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Branches\Branches.Outputs[Excel Source Output].Columns[COUNTRY]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Branches\Branches.Outputs[Excel Source Output].ExternalColumns[COUNTRY]"
+                      lineageId="Package\Branches\Branches.Outputs[Excel Source Output].Columns[COUNTRY]"
+                      name="COUNTRY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Branches\Branches.Outputs[Excel Source Output].Columns[CITY]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Branches\Branches.Outputs[Excel Source Output].ExternalColumns[CITY]"
+                      length="255"
+                      lineageId="Package\Branches\Branches.Outputs[Excel Source Output].Columns[CITY]"
+                      name="CITY"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Branches\Branches.Outputs[Excel Source Output].ExternalColumns[PHONE]"
+                      dataType="wstr"
+                      length="255"
+                      name="PHONE" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\Branches.Outputs[Excel Source Output].ExternalColumns[ADDRESS]"
+                      dataType="wstr"
+                      length="255"
+                      name="ADDRESS" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\Branches.Outputs[Excel Source Output].ExternalColumns[STATE]"
+                      dataType="wstr"
+                      length="255"
+                      name="STATE" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\Branches.Outputs[Excel Source Output].ExternalColumns[COUNTRY]"
+                      dataType="r8"
+                      name="COUNTRY" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\Branches.Outputs[Excel Source Output].ExternalColumns[CITY]"
+                      dataType="wstr"
+                      length="255"
+                      name="CITY" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Branches\Branches.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Branches\Branches.Outputs[Excel Source Error Output].Columns[PHONE]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Branches\Branches.Outputs[Excel Source Error Output].Columns[PHONE]"
+                      name="PHONE" />
+                    <outputColumn
+                      refId="Package\Branches\Branches.Outputs[Excel Source Error Output].Columns[ADDRESS]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Branches\Branches.Outputs[Excel Source Error Output].Columns[ADDRESS]"
+                      name="ADDRESS" />
+                    <outputColumn
+                      refId="Package\Branches\Branches.Outputs[Excel Source Error Output].Columns[STATE]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Branches\Branches.Outputs[Excel Source Error Output].Columns[STATE]"
+                      name="STATE" />
+                    <outputColumn
+                      refId="Package\Branches\Branches.Outputs[Excel Source Error Output].Columns[COUNTRY]"
+                      dataType="r8"
+                      lineageId="Package\Branches\Branches.Outputs[Excel Source Error Output].Columns[COUNTRY]"
+                      name="COUNTRY" />
+                    <outputColumn
+                      refId="Package\Branches\Branches.Outputs[Excel Source Error Output].Columns[CITY]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Branches\Branches.Outputs[Excel Source Error Output].Columns[CITY]"
+                      name="CITY" />
+                    <outputColumn
+                      refId="Package\Branches\Branches.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Branches\Branches.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Branches\Branches.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Branches\Branches.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Branches\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[BRANCHES]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Branches\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-240QH53.PriorityERP]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-240QH53.PriorityERP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PHONE]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PHONE"
+                      externalMetadataColumnId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHONE]"
+                      lineageId="Package\Branches\Branches.Outputs[Excel Source Output].Columns[PHONE]" />
+                    <inputColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ADDRESS]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ADDRESS"
+                      externalMetadataColumnId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ADDRESS]"
+                      lineageId="Package\Branches\Branches.Outputs[Excel Source Output].Columns[ADDRESS]" />
+                    <inputColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[STATE]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="STATE"
+                      externalMetadataColumnId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATE]"
+                      lineageId="Package\Branches\Branches.Outputs[Excel Source Output].Columns[STATE]" />
+                    <inputColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[COUNTRY]"
+                      cachedDataType="r8"
+                      cachedName="COUNTRY"
+                      externalMetadataColumnId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[COUNTRY]"
+                      lineageId="Package\Branches\Branches.Outputs[Excel Source Output].Columns[COUNTRY]" />
+                    <inputColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CITY]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CITY"
+                      externalMetadataColumnId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CITY]"
+                      lineageId="Package\Branches\Branches.Outputs[Excel Source Output].Columns[CITY]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BRANCH]"
+                      dataType="i8"
+                      name="BRANCH" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BRANCHNAME]"
+                      dataType="wstr"
+                      length="6"
+                      name="BRANCHNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHONE]"
+                      dataType="wstr"
+                      length="20"
+                      name="PHONE" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FAX]"
+                      dataType="wstr"
+                      length="20"
+                      name="FAX" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WARHS]"
+                      dataType="i8"
+                      name="WARHS" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CASH]"
+                      dataType="i8"
+                      name="CASH" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BRANCHDES]"
+                      dataType="wstr"
+                      length="32"
+                      name="BRANCHDES" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDENTOLD]"
+                      dataType="wstr"
+                      length="1"
+                      name="IDENTOLD" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CUST]"
+                      dataType="i8"
+                      name="CUST" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RETCASH]"
+                      dataType="i8"
+                      name="RETCASH" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EBRANCHDES]"
+                      dataType="wstr"
+                      length="32"
+                      name="EBRANCHDES" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDENT]"
+                      dataType="wstr"
+                      length="3"
+                      name="IDENT" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[COMPANY]"
+                      dataType="i8"
+                      name="COMPANY" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[COSTC]"
+                      dataType="i8"
+                      name="COSTC" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SHVA_TERMINAL]"
+                      dataType="i8"
+                      name="SHVA_TERMINAL" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DISTRICT]"
+                      dataType="i8"
+                      name="DISTRICT" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ADDRESS]"
+                      dataType="wstr"
+                      length="80"
+                      name="ADDRESS" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ZIP]"
+                      dataType="wstr"
+                      length="10"
+                      name="ZIP" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATE]"
+                      dataType="wstr"
+                      length="40"
+                      name="STATE" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[COUNTRY]"
+                      dataType="i8"
+                      name="COUNTRY" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ADDRESSA]"
+                      dataType="wstr"
+                      length="80"
+                      name="ADDRESSA" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHONEA]"
+                      dataType="wstr"
+                      length="20"
+                      name="PHONEA" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FAXA]"
+                      dataType="wstr"
+                      length="20"
+                      name="FAXA" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ZIPA]"
+                      dataType="wstr"
+                      length="16"
+                      name="ZIPA" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATEA]"
+                      dataType="wstr"
+                      length="40"
+                      name="STATEA" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EMAIL]"
+                      dataType="wstr"
+                      length="48"
+                      name="EMAIL" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WEBSITE]"
+                      dataType="wstr"
+                      length="48"
+                      name="WEBSITE" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EXTFILENAME]"
+                      dataType="wstr"
+                      length="80"
+                      name="EXTFILENAME" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EXTFILENAMEE]"
+                      dataType="wstr"
+                      length="80"
+                      name="EXTFILENAMEE" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[INTERNALCUST]"
+                      dataType="i8"
+                      name="INTERNALCUST" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[INTERNALSUP]"
+                      dataType="i8"
+                      name="INTERNALSUP" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ACCOUNT]"
+                      dataType="i8"
+                      name="ACCOUNT" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[INACTIVE]"
+                      dataType="wstr"
+                      length="1"
+                      name="INACTIVE" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WTAXNUM]"
+                      dataType="wstr"
+                      length="16"
+                      name="WTAXNUM" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WITHHOLDINGNUM]"
+                      dataType="wstr"
+                      length="10"
+                      name="WITHHOLDINGNUM" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ADDRESS2]"
+                      dataType="wstr"
+                      length="80"
+                      name="ADDRESS2" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ADDRESS3]"
+                      dataType="wstr"
+                      length="80"
+                      name="ADDRESS3" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ESTABLISHDATE]"
+                      dataType="i8"
+                      name="ESTABLISHDATE" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[APPUSER]"
+                      dataType="i8"
+                      name="APPUSER" />
+                    <externalMetadataColumn
+                      refId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CITY]"
+                      dataType="wstr"
+                      length="255"
+                      name="CITY" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Branches\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Branches\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Branches\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Branches\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Branches\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Branches.Paths[Excel Source Output]"
+              endId="Package\Branches\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Excel Source Output"
+              startId="Package\Branches\Branches.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\excel to agents"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{DB900145-83D2-4F66-8BCB-BA3541BE7F49}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="excel to agents"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\excel to agents\agents"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="agents"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">data$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\excel to agents\agents.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\excel to agents\agents.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\excel to agents\agents.Outputs[Excel Source Output].Columns[AGENT]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\excel to agents\agents.Outputs[Excel Source Output].ExternalColumns[AGENT]"
+                      lineageId="Package\excel to agents\agents.Outputs[Excel Source Output].Columns[AGENT]"
+                      name="AGENT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\excel to agents\agents.Outputs[Excel Source Output].Columns[AGENTNAME]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\excel to agents\agents.Outputs[Excel Source Output].ExternalColumns[AGENTNAME]"
+                      length="255"
+                      lineageId="Package\excel to agents\agents.Outputs[Excel Source Output].Columns[AGENTNAME]"
+                      name="AGENTNAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\excel to agents\agents.Outputs[Excel Source Output].Columns[COMMISSION]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\excel to agents\agents.Outputs[Excel Source Output].ExternalColumns[COMMISSION]"
+                      lineageId="Package\excel to agents\agents.Outputs[Excel Source Output].Columns[COMMISSION]"
+                      name="COMMISSION"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\excel to agents\agents.Outputs[Excel Source Output].Columns[ADDRESS]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\excel to agents\agents.Outputs[Excel Source Output].ExternalColumns[ADDRESS]"
+                      length="255"
+                      lineageId="Package\excel to agents\agents.Outputs[Excel Source Output].Columns[ADDRESS]"
+                      name="ADDRESS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\excel to agents\agents.Outputs[Excel Source Output].Columns[STATE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\excel to agents\agents.Outputs[Excel Source Output].ExternalColumns[STATE]"
+                      length="255"
+                      lineageId="Package\excel to agents\agents.Outputs[Excel Source Output].Columns[STATE]"
+                      name="STATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\excel to agents\agents.Outputs[Excel Source Output].Columns[COUNTRY]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\excel to agents\agents.Outputs[Excel Source Output].ExternalColumns[COUNTRY]"
+                      lineageId="Package\excel to agents\agents.Outputs[Excel Source Output].Columns[COUNTRY]"
+                      name="COUNTRY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\excel to agents\agents.Outputs[Excel Source Output].Columns[EMAIL]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\excel to agents\agents.Outputs[Excel Source Output].ExternalColumns[EMAIL]"
+                      length="255"
+                      lineageId="Package\excel to agents\agents.Outputs[Excel Source Output].Columns[EMAIL]"
+                      name="EMAIL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\excel to agents\agents.Outputs[Excel Source Output].Columns[PHONE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\excel to agents\agents.Outputs[Excel Source Output].ExternalColumns[PHONE]"
+                      length="255"
+                      lineageId="Package\excel to agents\agents.Outputs[Excel Source Output].Columns[PHONE]"
+                      name="PHONE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\excel to agents\agents.Outputs[Excel Source Output].Columns[BRANCH]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\excel to agents\agents.Outputs[Excel Source Output].ExternalColumns[BRANCH]"
+                      lineageId="Package\excel to agents\agents.Outputs[Excel Source Output].Columns[BRANCH]"
+                      name="BRANCH"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents.Outputs[Excel Source Output].ExternalColumns[AGENT]"
+                      dataType="r8"
+                      name="AGENT" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents.Outputs[Excel Source Output].ExternalColumns[AGENTNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="AGENTNAME" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents.Outputs[Excel Source Output].ExternalColumns[COMMISSION]"
+                      dataType="r8"
+                      name="COMMISSION" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents.Outputs[Excel Source Output].ExternalColumns[ADDRESS]"
+                      dataType="wstr"
+                      length="255"
+                      name="ADDRESS" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents.Outputs[Excel Source Output].ExternalColumns[STATE]"
+                      dataType="wstr"
+                      length="255"
+                      name="STATE" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents.Outputs[Excel Source Output].ExternalColumns[COUNTRY]"
+                      dataType="r8"
+                      name="COUNTRY" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents.Outputs[Excel Source Output].ExternalColumns[EMAIL]"
+                      dataType="wstr"
+                      length="255"
+                      name="EMAIL" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents.Outputs[Excel Source Output].ExternalColumns[PHONE]"
+                      dataType="wstr"
+                      length="255"
+                      name="PHONE" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents.Outputs[Excel Source Output].ExternalColumns[BRANCH]"
+                      dataType="r8"
+                      name="BRANCH" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\excel to agents\agents.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\excel to agents\agents.Outputs[Excel Source Error Output].Columns[AGENT]"
+                      dataType="r8"
+                      lineageId="Package\excel to agents\agents.Outputs[Excel Source Error Output].Columns[AGENT]"
+                      name="AGENT" />
+                    <outputColumn
+                      refId="Package\excel to agents\agents.Outputs[Excel Source Error Output].Columns[AGENTNAME]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\excel to agents\agents.Outputs[Excel Source Error Output].Columns[AGENTNAME]"
+                      name="AGENTNAME" />
+                    <outputColumn
+                      refId="Package\excel to agents\agents.Outputs[Excel Source Error Output].Columns[COMMISSION]"
+                      dataType="r8"
+                      lineageId="Package\excel to agents\agents.Outputs[Excel Source Error Output].Columns[COMMISSION]"
+                      name="COMMISSION" />
+                    <outputColumn
+                      refId="Package\excel to agents\agents.Outputs[Excel Source Error Output].Columns[ADDRESS]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\excel to agents\agents.Outputs[Excel Source Error Output].Columns[ADDRESS]"
+                      name="ADDRESS" />
+                    <outputColumn
+                      refId="Package\excel to agents\agents.Outputs[Excel Source Error Output].Columns[STATE]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\excel to agents\agents.Outputs[Excel Source Error Output].Columns[STATE]"
+                      name="STATE" />
+                    <outputColumn
+                      refId="Package\excel to agents\agents.Outputs[Excel Source Error Output].Columns[COUNTRY]"
+                      dataType="r8"
+                      lineageId="Package\excel to agents\agents.Outputs[Excel Source Error Output].Columns[COUNTRY]"
+                      name="COUNTRY" />
+                    <outputColumn
+                      refId="Package\excel to agents\agents.Outputs[Excel Source Error Output].Columns[EMAIL]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\excel to agents\agents.Outputs[Excel Source Error Output].Columns[EMAIL]"
+                      name="EMAIL" />
+                    <outputColumn
+                      refId="Package\excel to agents\agents.Outputs[Excel Source Error Output].Columns[PHONE]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\excel to agents\agents.Outputs[Excel Source Error Output].Columns[PHONE]"
+                      name="PHONE" />
+                    <outputColumn
+                      refId="Package\excel to agents\agents.Outputs[Excel Source Error Output].Columns[BRANCH]"
+                      dataType="r8"
+                      lineageId="Package\excel to agents\agents.Outputs[Excel Source Error Output].Columns[BRANCH]"
+                      name="BRANCH" />
+                    <outputColumn
+                      refId="Package\excel to agents\agents.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\excel to agents\agents.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\excel to agents\agents.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\excel to agents\agents.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\excel to agents\agents tbl"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="agents tbl"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[AGENTS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\excel to agents\agents tbl.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-240QH53.PriorityERP]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-240QH53.PriorityERP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].Columns[AGENTNAME]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="AGENTNAME"
+                      externalMetadataColumnId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[AGENTNAME]"
+                      lineageId="Package\excel to agents\agents.Outputs[Excel Source Output].Columns[AGENTNAME]" />
+                    <inputColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].Columns[COMMISSION]"
+                      cachedDataType="r8"
+                      cachedName="COMMISSION"
+                      externalMetadataColumnId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[COMMISSION]"
+                      lineageId="Package\excel to agents\agents.Outputs[Excel Source Output].Columns[COMMISSION]" />
+                    <inputColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].Columns[ADDRESS]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ADDRESS"
+                      externalMetadataColumnId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[ADDRESS]"
+                      lineageId="Package\excel to agents\agents.Outputs[Excel Source Output].Columns[ADDRESS]" />
+                    <inputColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].Columns[STATE]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="STATE"
+                      externalMetadataColumnId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[STATE]"
+                      lineageId="Package\excel to agents\agents.Outputs[Excel Source Output].Columns[STATE]" />
+                    <inputColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].Columns[COUNTRY]"
+                      cachedDataType="r8"
+                      cachedName="COUNTRY"
+                      externalMetadataColumnId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[COUNTRY]"
+                      lineageId="Package\excel to agents\agents.Outputs[Excel Source Output].Columns[COUNTRY]" />
+                    <inputColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].Columns[EMAIL]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="EMAIL"
+                      externalMetadataColumnId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[EMAIL]"
+                      lineageId="Package\excel to agents\agents.Outputs[Excel Source Output].Columns[EMAIL]" />
+                    <inputColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].Columns[PHONE]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PHONE"
+                      externalMetadataColumnId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[PHONE]"
+                      lineageId="Package\excel to agents\agents.Outputs[Excel Source Output].Columns[PHONE]" />
+                    <inputColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].Columns[BRANCH]"
+                      cachedDataType="r8"
+                      cachedName="BRANCH"
+                      externalMetadataColumnId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[BRANCH]"
+                      lineageId="Package\excel to agents\agents.Outputs[Excel Source Output].Columns[BRANCH]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[AGENT]"
+                      dataType="i8"
+                      name="AGENT" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[AGENTCODE]"
+                      dataType="wstr"
+                      length="16"
+                      name="AGENTCODE" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[AGENTNAME]"
+                      dataType="wstr"
+                      length="32"
+                      name="AGENTNAME" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[DISCOUNT]"
+                      dataType="r8"
+                      name="DISCOUNT" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[COMMISSION]"
+                      dataType="r8"
+                      name="COMMISSION" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[ADDRESS]"
+                      dataType="wstr"
+                      length="80"
+                      name="ADDRESS" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[PHONE]"
+                      dataType="wstr"
+                      length="20"
+                      name="PHONE" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[FAX]"
+                      dataType="wstr"
+                      length="20"
+                      name="FAX" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[STATE]"
+                      dataType="wstr"
+                      length="40"
+                      name="STATE" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[ZIP]"
+                      dataType="wstr"
+                      length="10"
+                      name="ZIP" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[COUNTRY]"
+                      dataType="i8"
+                      name="COUNTRY" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[CURRENCY]"
+                      dataType="i8"
+                      name="CURRENCY" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[EAGENTNAME]"
+                      dataType="wstr"
+                      length="32"
+                      name="EAGENTNAME" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[WARHS]"
+                      dataType="i8"
+                      name="WARHS" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[EMAIL]"
+                      dataType="wstr"
+                      length="48"
+                      name="EMAIL" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[CUSTFLAG]"
+                      dataType="wstr"
+                      length="1"
+                      name="CUSTFLAG" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[ADDRESSA]"
+                      dataType="wstr"
+                      length="80"
+                      name="ADDRESSA" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[STATEA]"
+                      dataType="wstr"
+                      length="40"
+                      name="STATEA" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[SECONDLANGTEXT]"
+                      dataType="wstr"
+                      length="1"
+                      name="SECONDLANGTEXT" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[MAGENT]"
+                      dataType="i8"
+                      name="MAGENT" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[INACTIVE]"
+                      dataType="wstr"
+                      length="1"
+                      name="INACTIVE" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[EXTFILEFLAG]"
+                      dataType="wstr"
+                      length="1"
+                      name="EXTFILEFLAG" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[CELLPHONE]"
+                      dataType="wstr"
+                      length="20"
+                      name="CELLPHONE" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[USERFLAG]"
+                      dataType="wstr"
+                      length="1"
+                      name="USERFLAG" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[ADDRESS2]"
+                      dataType="wstr"
+                      length="80"
+                      name="ADDRESS2" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[ADDRESS3]"
+                      dataType="wstr"
+                      length="80"
+                      name="ADDRESS3" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[CUSTCAMPTYPE]"
+                      dataType="i8"
+                      name="CUSTCAMPTYPE" />
+                    <externalMetadataColumn
+                      refId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input].ExternalColumns[BRANCH]"
+                      dataType="i8"
+                      name="BRANCH" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\excel to agents\agents tbl.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\excel to agents\agents tbl.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\excel to agents\agents tbl.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\excel to agents\agents tbl.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\excel to agents\agents tbl.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\excel to agents.Paths[Excel Source Output]"
+              endId="Package\excel to agents\agents tbl.Inputs[OLE DB Destination Input]"
+              name="Excel Source Output"
+              startId="Package\excel to agents\agents.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\excel to countries"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{CFF4C8D5-25C7-4500-8E30-F73A83827D66}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="excel to countries"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\excel to countries\countires"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="countires"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Sheet1$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\excel to countries\countires.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\excel to countries\countires.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\excel to countries\countires.Outputs[Excel Source Output].Columns[COUNTRY]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\excel to countries\countires.Outputs[Excel Source Output].ExternalColumns[COUNTRY]"
+                      lineageId="Package\excel to countries\countires.Outputs[Excel Source Output].Columns[COUNTRY]"
+                      name="COUNTRY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\excel to countries\countires.Outputs[Excel Source Output].Columns[COUNTRYNAME]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\excel to countries\countires.Outputs[Excel Source Output].ExternalColumns[COUNTRYNAME]"
+                      length="255"
+                      lineageId="Package\excel to countries\countires.Outputs[Excel Source Output].Columns[COUNTRYNAME]"
+                      name="COUNTRYNAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\excel to countries\countires.Outputs[Excel Source Output].Columns[COUNTRYCODE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\excel to countries\countires.Outputs[Excel Source Output].ExternalColumns[COUNTRYCODE]"
+                      length="255"
+                      lineageId="Package\excel to countries\countires.Outputs[Excel Source Output].Columns[COUNTRYCODE]"
+                      name="COUNTRYCODE"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\excel to countries\countires.Outputs[Excel Source Output].ExternalColumns[COUNTRY]"
+                      dataType="r8"
+                      name="COUNTRY" />
+                    <externalMetadataColumn
+                      refId="Package\excel to countries\countires.Outputs[Excel Source Output].ExternalColumns[COUNTRYNAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="COUNTRYNAME" />
+                    <externalMetadataColumn
+                      refId="Package\excel to countries\countires.Outputs[Excel Source Output].ExternalColumns[COUNTRYCODE]"
+                      dataType="wstr"
+                      length="255"
+                      name="COUNTRYCODE" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\excel to countries\countires.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\excel to countries\countires.Outputs[Excel Source Error Output].Columns[COUNTRY]"
+                      dataType="r8"
+                      lineageId="Package\excel to countries\countires.Outputs[Excel Source Error Output].Columns[COUNTRY]"
+                      name="COUNTRY" />
+                    <outputColumn
+                      refId="Package\excel to countries\countires.Outputs[Excel Source Error Output].Columns[COUNTRYNAME]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\excel to countries\countires.Outputs[Excel Source Error Output].Columns[COUNTRYNAME]"
+                      name="COUNTRYNAME" />
+                    <outputColumn
+                      refId="Package\excel to countries\countires.Outputs[Excel Source Error Output].Columns[COUNTRYCODE]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\excel to countries\countires.Outputs[Excel Source Error Output].Columns[COUNTRYCODE]"
+                      name="COUNTRYCODE" />
+                    <outputColumn
+                      refId="Package\excel to countries\countires.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\excel to countries\countires.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\excel to countries\countires.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\excel to countries\countires.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\excel to countries\COUNTRIES"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="COUNTRIES"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[COUNTRIES]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\excel to countries\COUNTRIES.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-240QH53.PriorityERP]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-240QH53.PriorityERP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\excel to countries\COUNTRIES.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\excel to countries\COUNTRIES.Inputs[OLE DB Destination Input].Columns[COUNTRYNAME]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="COUNTRYNAME"
+                      externalMetadataColumnId="Package\excel to countries\COUNTRIES.Inputs[OLE DB Destination Input].ExternalColumns[COUNTRYNAME]"
+                      lineageId="Package\excel to countries\countires.Outputs[Excel Source Output].Columns[COUNTRYNAME]" />
+                    <inputColumn
+                      refId="Package\excel to countries\COUNTRIES.Inputs[OLE DB Destination Input].Columns[COUNTRYCODE]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="COUNTRYCODE"
+                      externalMetadataColumnId="Package\excel to countries\COUNTRIES.Inputs[OLE DB Destination Input].ExternalColumns[COUNTRYCODE]"
+                      lineageId="Package\excel to countries\countires.Outputs[Excel Source Output].Columns[COUNTRYCODE]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\excel to countries\COUNTRIES.Inputs[OLE DB Destination Input].ExternalColumns[COUNTRY]"
+                      dataType="i8"
+                      name="COUNTRY" />
+                    <externalMetadataColumn
+                      refId="Package\excel to countries\COUNTRIES.Inputs[OLE DB Destination Input].ExternalColumns[COUNTRYNAME]"
+                      dataType="wstr"
+                      length="18"
+                      name="COUNTRYNAME" />
+                    <externalMetadataColumn
+                      refId="Package\excel to countries\COUNTRIES.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMSTYPE]"
+                      dataType="wstr"
+                      length="1"
+                      name="CUSTOMSTYPE" />
+                    <externalMetadataColumn
+                      refId="Package\excel to countries\COUNTRIES.Inputs[OLE DB Destination Input].ExternalColumns[COUNTRYCODE]"
+                      dataType="wstr"
+                      length="2"
+                      name="COUNTRYCODE" />
+                    <externalMetadataColumn
+                      refId="Package\excel to countries\COUNTRIES.Inputs[OLE DB Destination Input].ExternalColumns[TAX]"
+                      dataType="i8"
+                      name="TAX" />
+                    <externalMetadataColumn
+                      refId="Package\excel to countries\COUNTRIES.Inputs[OLE DB Destination Input].ExternalColumns[INTRASTATCODE]"
+                      dataType="wstr"
+                      length="2"
+                      name="INTRASTATCODE" />
+                    <externalMetadataColumn
+                      refId="Package\excel to countries\COUNTRIES.Inputs[OLE DB Destination Input].ExternalColumns[ECOUNTRYNAME]"
+                      dataType="wstr"
+                      length="18"
+                      name="ECOUNTRYNAME" />
+                    <externalMetadataColumn
+                      refId="Package\excel to countries\COUNTRIES.Inputs[OLE DB Destination Input].ExternalColumns[USAPHONE]"
+                      dataType="wstr"
+                      length="1"
+                      name="USAPHONE" />
+                    <externalMetadataColumn
+                      refId="Package\excel to countries\COUNTRIES.Inputs[OLE DB Destination Input].ExternalColumns[VATNUM_FORMAT]"
+                      dataType="wstr"
+                      length="16"
+                      name="VATNUM_FORMAT" />
+                    <externalMetadataColumn
+                      refId="Package\excel to countries\COUNTRIES.Inputs[OLE DB Destination Input].ExternalColumns[VATNUM_LENGTH]"
+                      dataType="wstr"
+                      length="8"
+                      name="VATNUM_LENGTH" />
+                    <externalMetadataColumn
+                      refId="Package\excel to countries\COUNTRIES.Inputs[OLE DB Destination Input].ExternalColumns[ECSLCODE]"
+                      dataType="wstr"
+                      length="2"
+                      name="ECSLCODE" />
+                    <externalMetadataColumn
+                      refId="Package\excel to countries\COUNTRIES.Inputs[OLE DB Destination Input].ExternalColumns[COUNTRYCODE3]"
+                      dataType="wstr"
+                      length="3"
+                      name="COUNTRYCODE3" />
+                    <externalMetadataColumn
+                      refId="Package\excel to countries\COUNTRIES.Inputs[OLE DB Destination Input].ExternalColumns[PIKORDER]"
+                      dataType="i8"
+                      name="PIKORDER" />
+                    <externalMetadataColumn
+                      refId="Package\excel to countries\COUNTRIES.Inputs[OLE DB Destination Input].ExternalColumns[BLACKLISTFLAG]"
+                      dataType="wstr"
+                      length="1"
+                      name="BLACKLISTFLAG" />
+                    <externalMetadataColumn
+                      refId="Package\excel to countries\COUNTRIES.Inputs[OLE DB Destination Input].ExternalColumns[NATIONALITY]"
+                      dataType="wstr"
+                      length="40"
+                      name="NATIONALITY" />
+                    <externalMetadataColumn
+                      refId="Package\excel to countries\COUNTRIES.Inputs[OLE DB Destination Input].ExternalColumns[EEAFLAG]"
+                      dataType="wstr"
+                      length="1"
+                      name="EEAFLAG" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\excel to countries\COUNTRIES.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\excel to countries\COUNTRIES.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\excel to countries\COUNTRIES.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\excel to countries\COUNTRIES.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\excel to countries\COUNTRIES.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\excel to countries\COUNTRIES.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\excel to countries.Paths[Excel Source Output]"
+              endId="Package\excel to countries\COUNTRIES.Inputs[OLE DB Destination Input]"
+              name="Excel Source Output"
+              startId="Package\excel to countries\countires.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="162,42"
+          Id="Package\excel to countries"
+          TopLeft="27,13" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\excel to agents"
+          TopLeft="35,90" />
+        <NodeLayout
+          Size="122,42"
+          Id="Package\Branches"
+          TopLeft="273,13" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\excel to countries">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="122,42"
+          Id="Package\excel to countries\countires"
+          TopLeft="58,30" />
+        <NodeLayout
+          Size="136,42"
+          Id="Package\excel to countries\COUNTRIES"
+          TopLeft="301,32" />
+        <EdgeLayout
+          Id="Package\excel to countries.Paths[Excel Source Output]"
+          TopLeft="180,52">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="121,0"
+              Start="0,0"
+              End="113.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="113.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\excel to countries\countires">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\excel to countries\COUNTRIES">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\excel to agents">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="110,42"
+          Id="Package\excel to agents\agents"
+          TopLeft="65,66" />
+        <NodeLayout
+          Size="126,42"
+          Id="Package\excel to agents\agents tbl"
+          TopLeft="302,59" />
+        <EdgeLayout
+          Id="Package\excel to agents.Paths[Excel Source Output]"
+          TopLeft="175,83.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="127,0"
+              Start="0,0"
+              End="119.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="119.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\excel to agents\agents">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\excel to agents\agents tbl">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Branches">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="122,42"
+          Id="Package\Branches\Branches"
+          TopLeft="64,60" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Branches\OLE DB Destination"
+          TopLeft="347,61" />
+        <EdgeLayout
+          Id="Package\Branches.Paths[Excel Source Output]"
+          TopLeft="186,81.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="161,0"
+              Start="0,0"
+              End="153.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="153.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Branches\Branches">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Branches\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

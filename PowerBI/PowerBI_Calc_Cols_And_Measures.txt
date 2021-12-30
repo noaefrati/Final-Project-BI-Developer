@@ -1,0 +1,33 @@
+Measures:
+
+YTD Total Units = TOTALYTD([Total Units], 'DimDate'[Date])
+YTD Sales = TOTALYTD([Total Sales], 'DimDate'[Date])
+
+Total Commission = SUM(FactSales[Commission])
+Total Cost = SUM(FactSales[TotalCost])
+Total Discount = SUM(FactSales[DiscountCost])
+Total Revenue = SUM(FactSales[Revenue])
+Total Sales = SUM(FactSales[SalesAmount])
+Total Units = SUM(FactSales[Quantity])
+Total Units Var = [Total Units] - [LY Total Units]
+
+Sales Var = [Total Sales] - [LY Sales]
+Revenue % = [Total Revenue]/[Total Sales]
+
+LY YTD Total Units = CALCULATE([YTD Total Units], SAMEPERIODLASTYEAR('DimDate'[Date]))
+LY YTD Sales = CALCULATE([YTD Sales],SAMEPERIODLASTYEAR('DimDate'[Date]))
+LY Total Units = CALCULATE([Total Units],SAMEPERIODLASTYEAR('DimDate'[Date]))
+LY Total Sales = CALCULATE([Total Units], SAMEPERIODLASTYEAR('DimDate'[Date]))
+LY Sales = CALCULATE([Total Sales],SAMEPERIODLASTYEAR('DimDate'[Date]))
+LY Revenue = CALCULATE([Total Revenue], SAMEPERIODLASTYEAR('DimDate'[Date]))
+LY Discount = CALCULATE([Total Discount], SAMEPERIODLASTYEAR('DimDate'[Date]))
+LY Cost = CALCULATE([Total Cost], SAMEPERIODLASTYEAR('DimDate'[Date]))
+LY Commission = CALCULATE([Total Commission], SAMEPERIODLASTYEAR('DimDate'[Date]))
+
+Calculated Columns:
+
+Commission = RELATED(DimAgents[Commission]) * FactSales[Revenue]
+DiscountCost = FactSales[SalesAmount] * FactSales[Discount]
+Revenue = FactSales[SalesAmount]-FactSales[DiscountCost]-FactSales[TotalCost]
+SalesAmount = (FactSales[Price] * FactSales[Quantity])
+TotalCost = FactSales[Cost] * FactSales[Quantity]

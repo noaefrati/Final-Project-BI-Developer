@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="CDC - PriorityERP OLTP"
+  DTS:DTSID="{CDF51883-3DE6-4E2F-92B6-FDE6B7214A11}"
+  DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=DESKTOP-240QH53;Initial Catalog=PriorityERP;Integrated Security=True;Application Name=SSIS-OneTime-{CDF51883-3DE6-4E2F-92B6-FDE6B7214A11}DESKTOP-240QH53.DWH_Only_Clothing_Store1;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
