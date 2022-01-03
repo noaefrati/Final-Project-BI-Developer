@@ -1,3 +1,10 @@
+use PriorityERP
+GO
+
+ALTER TABLE BRANCHES
+ADD CITY NVARCHAR(255) NULL
+GO
+
 insert into BRANCHES (PHONE, ADDRESS, STATE, CITY) values ('616-879-7219', '8662 Hansons Trail', 'Michigan', 'Grand Rapids');
 insert into BRANCHES (PHONE, ADDRESS, STATE, CITY) values ('319-690-8383', '70094 Pepper Wood Plaza', 'Iowa', 'Iowa City');
 insert into BRANCHES (PHONE, ADDRESS, STATE, CITY) values ('808-637-2989', '50 Harbort Court', 'Hawaii', 'Honolulu');

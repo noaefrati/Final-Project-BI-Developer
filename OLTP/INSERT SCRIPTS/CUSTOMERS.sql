@@ -1,3 +1,6 @@
+USE PriorityERP
+GO
+
 insert into CUSTOMERS (CUSTNAME, ADDRESS, STATE, PHONE, AGENT, COUNTRY) values ('Francis Candy', '51668 Banding Terrace', 'Alabama', '334-927-3393', 309, 1);
 insert into CUSTOMERS (CUSTNAME, ADDRESS, STATE, PHONE, AGENT, COUNTRY) values ('Terence Mapledorum', '080 Amoth Center', 'Florida', '813-198-1767', 444, 1);
 insert into CUSTOMERS (CUSTNAME, ADDRESS, STATE, PHONE, AGENT, COUNTRY) values ('Coral MacKissack', '4080 Hallows Trail', 'Massachusetts', '617-804-7736', 29, 1);

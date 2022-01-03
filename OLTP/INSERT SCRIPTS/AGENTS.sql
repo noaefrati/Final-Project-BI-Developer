@@ -1,3 +1,10 @@
+USE PriorityERP
+GO
+
+ALTER TABLE AGENTS
+ADD BRANCH BIGINT NULL
+GO
+
 insert into AGENTS (AGENTNAME, COMMISSION, ADDRESS, STATE, COUNTRY, EMAIL, PHONE, BRANCH) values ('Jenny Ivashkin', 18, '08 Park Meadow Alley', 'South Carolina', 1, 'jivashkin0@cdc.gov', '843-224-9523', 9);
 insert into AGENTS (AGENTNAME, COMMISSION, ADDRESS, STATE, COUNTRY, EMAIL, PHONE, BRANCH) values ('Tatiana Bonnet', 20, '74754 Golf Center', 'North Carolina', 1, 'tbonnet1@go.com', '704-212-6652', 8);
 insert into AGENTS (AGENTNAME, COMMISSION, ADDRESS, STATE, COUNTRY, EMAIL, PHONE, BRANCH) values ('Wyatt Sollas', 20, '9 Menomonie Point', 'New Mexico', 1, 'wsollas2@boston.com', '505-286-3660', 6);

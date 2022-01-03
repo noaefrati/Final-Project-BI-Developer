@@ -1,3 +1,6 @@
+USE PriorityERP
+GO
+
 insert into INVOICEITEMS (IV, PART, PRICE, QUANT, KLINE) values (636, 51, 29, 6, 1);
 insert into INVOICEITEMS (IV, PART, PRICE, QUANT, KLINE) values (296, 26, 35, 5, 2);
 insert into INVOICEITEMS (IV, PART, PRICE, QUANT, KLINE) values (32, 67, 83, 8, 3);
